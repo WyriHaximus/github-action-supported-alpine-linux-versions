@@ -1,0 +1,11 @@
+name: 'Supported Alpine Linux Versions'
+description: 'Fetches the currently supported Apine Linux versions from wiki.alpinelinux.org'
+branding:
+  icon: 'list'
+  color: 'green'
+outputs:
+  versions:
+    description: 'JSON array with the supported versions'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

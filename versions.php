@@ -25,5 +25,10 @@ foreach ((new DOMXPath($d))->query('//tbody/tr') as $row) {
     $versions[] = $version;
 }
 
-echo 'Found the following versions: ', implode(', ', $versions), PHP_EOL;
-echo '::set-output name=versions::', json_encode($versions), PHP_EOL;
+$filteredVersion = [];
+for ($i = 0; $i < (int)(getenv('INPUT_MAXVERSIONS') ?: count($versions)); $i++) {
+    $filteredVersion[] = $versions[$i];
+}
+
+echo 'Found the following versions: ', implode(', ', $filteredVersion), PHP_EOL;
+echo '::set-output name=versions::', json_encode($filteredVersion), PHP_EOL;

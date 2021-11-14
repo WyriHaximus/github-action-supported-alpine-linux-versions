@@ -3,6 +3,10 @@ description: 'Fetches the currently supported Apine Linux versions from wiki.alp
 branding:
   icon: 'list'
   color: 'green'
+inputs:
+  maxVersions:
+    required: false
+    description: 'Maximum number of versions to return'
 outputs:
   versions:
     description: 'JSON array with the supported versions'

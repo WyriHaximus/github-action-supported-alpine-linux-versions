@@ -1,1 +1,1 @@
-FROM wyrihaximusgithubactions/supported-alpine-linux-versions:master
+FROM wyrihaximusgithubactions/supported-alpine-linux-versions:v1.2

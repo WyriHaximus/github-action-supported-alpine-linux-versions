@@ -16,7 +16,7 @@ foreach ((new DOMXPath($d))->query('//tbody/tr') as $row) {
     if (trim(@$row->childNodes->item(1)->textContent) === 'edge') {
         continue;
     }
-    $eol = new \DateTimeImmutable(trim($row->childNodes->item(9)->textContent));
+    $eol = \DateTimeImmutable::createFromFormat('Y-m-d', trim(explode(' ', $row->childNodes->item(9)->textContent)[1]));
     $version = substr(trim($row->childNodes->item(1)->textContent), 1);
     if ($eol < $now) {
         continue;

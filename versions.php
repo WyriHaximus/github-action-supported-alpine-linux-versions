@@ -31,4 +31,4 @@ for ($i = 0; $i < (int)(getenv('INPUT_MAXVERSIONS') ?: count($versions)); $i++) 
 }
 
 echo 'Found the following versions: ', implode(', ', $filteredVersion), PHP_EOL;
-file_put_contents(getenv('GITHUB_OUTPUT'), 'versions=' . json_encode($versions) . PHP_EOL, FILE_APPEND);
+file_put_contents(getenv('GITHUB_OUTPUT'), 'versions=' . json_encode($versions) . "\n", FILE_APPEND);
